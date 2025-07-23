@@ -1,13 +1,22 @@
 import google.generativeai as genai
-from config import get_api, get_prompt
+from config import get_api, build_prompt
 import subprocess
+import argparse
 import json
 import re
 
 def start():
+
+    parser = argparse.ArgumentParser(description="Generate Python project structure using Gemini AI")
+    parser.add_argument("--desc", type=str, required=True, help="Project description (e.g., 'I want to create a todo app')")
+    args = parser.parse_args()
+
+    project_description = args.desc
+    prompt = build_prompt(project_description)
+
     genai.configure(api_key=get_api)
 
-    prompt = get_prompt
+    prompt = prompt
 
     model = genai.GenerativeModel("gemini-1.5-flash")
     response = model.generate_content(prompt)

@@ -30,17 +30,20 @@ def main():
     parser.add_argument('--json', type=str, required=True)
     args = parser.parse_args()
 
+    base_path = "C:\\Users\\User\\Desktop\\test_app"
+
     try:
         structure = json.loads(args.json)
     except json.JSONDecodeError as e:
-        print(f"❌ JSON format xətası: {e}")
+        print(f"JSON format xətası: {e}")
         return
 
     for root_folder, content in structure.items():
-        os.makedirs(root_folder, exist_ok=True)
-        create_structure(root_folder, content)
+        root_path = os.path.join(base_path, root_folder)
+        os.makedirs(root_path, exist_ok=True)
+        create_structure(root_path, content)
 
-    print("✅ Struktur uğurla yaradıldı.")
+    print("Struktur uğurla yaradıldı.")
 
 if __name__ == "__main__":
     main()
