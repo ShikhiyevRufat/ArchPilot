@@ -2,7 +2,6 @@ from customtkinter import*
 from PIL import Image
 
 
-
 win = CTk()
 
 screen_width = win.winfo_screenwidth()
@@ -95,8 +94,12 @@ prompt_entry = CTkEntry(tile_frame, height=40, width=win_width - 150, corner_rad
 prompt_entry.place(x=0, y=30)
 
 def get_data():
+    from start_app import start
     prompt = prompt_entry.get()
-    print(prompt)
+    language = option_menu_language.get()
+    architecture = option_menu_architecture.get()
+    start(prompt, language, architecture)
+    
 
 send_button = CTkButton(
     tile_frame,

@@ -5,14 +5,10 @@ import argparse
 import json
 import re
 
-def start():
+def start(new_prompt, language, architecure):
 
-    parser = argparse.ArgumentParser(description="Generate Python project structure using Gemini AI")
-    parser.add_argument("--desc", type=str, required=True, help="Project description (e.g., 'I want to create a todo app')")
-    args = parser.parse_args()
 
-    project_description = args.desc
-    prompt = build_prompt(project_description)
+    prompt = build_prompt(new_prompt, language, architecure)
 
     genai.configure(api_key=get_api)
 
