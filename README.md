@@ -1,5 +1,3 @@
-Of course! Here is the project description formatted in Markdown, perfect for a GitHub `README.md` file.
-
 ---
 
 # AI-Powered Project Boilerplate Generator
@@ -35,7 +33,7 @@ This tool empowers users of all skill levels to kickstart their projects with a 
 <br>
 <div align="center">
   <!-- Replace with your screenshot -->
-  <img src="https://via.placeholder.com/700x400" alt="Project Screenshot" width="700"/>
+  <img src="images/my_app.png" alt="Project Screenshot" width="700"/>
 </div>
 <br>
 
